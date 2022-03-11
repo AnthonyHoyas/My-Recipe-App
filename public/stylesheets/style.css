@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -21,88 +21,49 @@
   background-color: rgb(227, 227, 227);
   
 }
-
-footer{
-  width: 100vw;
-  height: 300vh;
-  background-color: red;
+#navBar{
+  width: 80vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-menu {
-  background-color: rgb(56, 183, 183);
+#uList{
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
 }
-.nav-menu2 {
-  background-color: rgb(56, 183, 183);
-  height: 20vh;
-  width: 35vw;
-}
-
-.navMenu {
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.navMenu a {
-  color: #000000;
-  margin-left: 3vw;
-  text-decoration: none;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  font-weight: 500;
-  display: inline-block;
+#logo{
+  height: 80px;
   width: 80px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  background-image: url(https://i.pinimg.com/originals/12/8e/b5/128eb51942f2bd18d98ee85bb144d4f3.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
-.navMenu a:hover {
-  color: #fddb3a;
+.col1{
+  fill: #ffde6b;
 }
+#carre{
+  margin-top: 120px;
+  margin-right: 88px;
+  position: absolute;
+  top: 0;
+  right: 0 ;
+  width: 150px;
+  height: 100px;
+  background-color: rgb(227, 227, 227);
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
 
-.navMenu .dot {
-  width: 6px;
-  height: 6px;
-  background: #fddb3a;
-  border-radius: 50%;
-  opacity: 0;
-  -webkit-transform: translateX(30px);
-  transform: translateX(30px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
-
-.navMenu a:nth-child(1):hover ~ .dot {
-  -webkit-transform: translateX(75px);
-  transform: translateX(75px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu a:nth-child(2):hover ~ .dot {
-  -webkit-transform: translateX(190px);
-  transform: translateX(190px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu a:nth-child(3):hover ~ .dot {
-  -webkit-transform: translateX(325px);
-  transform: translateX(325px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu a:nth-child(4):hover ~ .dot {
-  -webkit-transform: translateX(460px);
-  transform: translateX(460px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
 
 
 #first-container {
@@ -110,14 +71,14 @@ footer{
   background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100vw;
   height: 100vh;
 }
 #background {
     
-    background-image: url(https://image.architonic.com/pro2-3/20105499/loft-kitchen-0-04-200206-pro-b-arcit18.jpg);
+    background-image: url(https://c.tenor.com/4RGSv-iGVhwAAAAC/eat-sad.gif);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -128,7 +89,7 @@ footer{
     align-items: center;
     color: #ffde6b;
     font-size: 7rem;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 2px 0 #000, -1px 0 0 #000;
 
     font-family: 'Londrina Outline', cursive;}
 
