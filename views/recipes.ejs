@@ -5,34 +5,133 @@
   <meta name="viewport" content="width=device-width,
   initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="static/stylesheets/style.css">
+  <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
+
   <title>Document</title>
 </head>
 <body>
-
-<div id="background">
-Welcome
-</div>
-
-<div id="loader">
-  <h1>Cooking in progress..</h1>
-  <div id="cooking">
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div id="area">
-      <div id="sides">
-        <div id="pan"></div>
-        <div id="handle"></div>
-      </div>
-      <div id="pancake">
-        <div id="pastry"></div>
-      </div>
+<div id="anthony-kitchen">
+  <div id="first-container">
+  <div class="nav-menu">
+      <nav class="navMenu">
+        <a href="#" id="recipeButton">Recipes</a>
+        <a href="#">Add</a>
+        <a href="#">About</a>
+        <a href="#">Search</a>
+        <div class="dot"></div>
+      </nav>
+  </div>
+    <div id="background">
+    Anthony's Kitchen
+    </div>
+    <div class="nav-menu2">
     </div>
   </div>
+  
+  
+   <div id="loader">
+    <h1>Cooking in progress..</h1>
+    <div id="cooking">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div id="area">
+        <div id="sides">
+          <div id="pan"></div>
+          <div id="handle"></div>
+        </div>
+        <div id="pancake">
+          <div id="pastry"></div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+
+
+</div>
+<div id="search-recipe">
+  Search for a recipe
+  <form onsubmit="event.preventDefault();" role="search">
+    <label for="search">Search for stuff</label>
+    <input id="search" type="search" placeholder="Search..." autofocus required />
+    <button type="submit">Go</button>    
+  </form>
+</div>
+<div id="anthony-kitchen-recipes">
+  <div id="recipe-book">
+    <div class="recipe-card" id="recipe-card-1">
+
+      <aside>
+    
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/oatmeal.jpg" alt="Chai Oatmeal" />
+    
+    
+      </aside>
+    
+      <article>
+    
+        <h2>Chai Oatmeal</h2>
+        <h3>Breakfast</h3>
+    
+        <ul>
+          <li><span class="icon icon-users"></span><span>1</span></li>
+          <li><span class="icon icon-clock"></span><span>15 min</span></li>
+          <li><span class="icon icon-level"></span><span>Beginner level</span></li>
+          <li><span class="icon icon-calories"></span><span>248</span></li>
+        </ul>
+    
+        <p>For an extra thick and creamy bowl, add oat bran.  It'll make for a hearty helping and also add more fiber to your meal.  If you love the taste of chai, you'll enjoy this spiced version with coriander, cinnamon, and turmeric.</p>
+    
+        <p class="ingredients"><span>Ingredients:&nbsp;</span>Milk, salt, coriander, cardamom, cinnamon, turmeric, honey, vanilla extract, regular oats, oat bran.</p>
+    
+      </article>
+    
+    </div>
+    
+  </div>
+</div>
+<div id="send-recipe-card">
+  <div id="recipe-book">
+    <div class="recipe-card" id="recipe-card-1">
+
+      <aside>
+    
+        <button id="upload_widget" class="cloudinary-button">Upload image</button>
+    
+        <img  
+        id="uploadedimage" 
+        src="">
+      </img> 
+      </aside>
+    
+      <article>
+    
+        <h2><input id="newRecipeName" type="text" placeholder="Recipe name"></h2>
+        <h3><input id="newRecipeShortDescription" type="text" placeholder="Recipe short description"></h3>
+    
+        <ul>
+          <li><span class="icon icon-users"></span><span><input type="text" id="servings" placeholder="servings"></span></li>
+          <li><span class="icon icon-clock"></span><span><input type="text" id="time" placeholder="time"></span></li>
+          <li><span class="icon icon-level"></span><span><input type="text" id="level" placeholder="level"></span></li>
+          <li><span class="icon icon-calories"></span><span><input type="text" id="cal" placeholder="cal"></span></li>
+        </ul>
+    
+        <p><input type="text" id="description" placeholder="description" ></p>
+        <p> <input type="text" id="ingredients" placeholder="ingredients" size="50"></p>    
+      </article>
+    
+    </div>
+    <button id="send-data">SEND DATA</button>
+  </div>
+
 </div>
 
+
+
+<button id="button">click</button>
 
   <script src="static/scripts/recipes.js"></script>
 </body>

@@ -20,7 +20,11 @@ app.get('/',(req, res) => {
 
 // Create here your api setup
 
+app.post('/api/addRecipe', (req, res) => {
+  recipe.addRecipe(req.body)
+})
 
+app.post('/api/recipe', recipe.recipedb)
 
 
 app.listen(3000, () => console.log("Server Up and running"));
