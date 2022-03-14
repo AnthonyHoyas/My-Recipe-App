@@ -11,7 +11,7 @@ let inputDescripton = document.getElementById('description')
 let inputIngredients= document.getElementById('ingredients')
 var TEXT1 = []
 let list = document.getElementById('anthony-kitchen-recipes')
-let burger = document.getElementById('svg')
+let burger = document.getElementById('logo')
 let carre = document.getElementById('carre')
 let recipecarre = document.getElementById('recipeCarre')
 let recipe = document.getElementById('recipe-book')
@@ -47,6 +47,8 @@ let disapear = () => {
 window.addEventListener('load', () => {
 fadeOutEffect()
 disapear()
+GetRecipeFromDB()
+
 })
 
 // recipeButton.addEventListener('click', () => {
@@ -97,6 +99,24 @@ const addRecipeToDB = (infos) => {
   })
 }
 
+const delrecipeToDB = (infos) => {
+  fetch('/api/delrecipe', {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(infos),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+
 const GetRecipeFromDB = () => {
   fetch('api/recipe', {
       method: 'POST',
@@ -138,6 +158,10 @@ const GetRecipeFromDB = () => {
           
               <p class="ingredients"><span>Ingredients:&nbsp;</span>${element.ingredients}</p>
           
+              <div id="newbut">
+              <button class="remove-but"> Remove from DB </button>
+              <button id="update-but"> Update</button>
+              </div>
             </article>
           
           </div>
@@ -145,7 +169,16 @@ const GetRecipeFromDB = () => {
         </div>`
 
           list.insertAdjacentHTML('beforeend', recipeCard) 
-      });
+        });
+        
+        let remove = document.querySelectorAll('.remove-but')
+        remove.forEach((element, index) => {
+          element.addEventListener('click', () => {
+            console.log('hellothere');
+            delrecipeToDB({data: data.data[index]})
+            list.innerHTML = ''
+          })
+        })
   })
   .catch((error) => {
       console.error('Error:', error);
@@ -157,6 +190,8 @@ sendData.addEventListener('click', () => {
   let Array = []
   Array.push(inputTitle.value, inputSDescr.value, inputServings.value, inputTime.value, inputLevel.value, inputCal.value, inputDescripton.value, inputIngredients.value, TEXT1[0] )
   addRecipeToDB(Array)
+  alert('sent to DB')
+  GetRecipeFromDB()
 })
 
 burger.addEventListener('click', () => {
@@ -213,8 +248,9 @@ let FetchingData = () => {
           
               <p>${data.meals[0].strInstructions}</p>
           
-              <p class="ingredients"><span>Ingredients:&nbsp;</span>${data.meals[0].strIngredient1}</p>
+              <p class="ingredients"><span>Ingredients:&nbsp;</span>${data.meals[0].strIngredient1}, ${data.meals[0].strIngredient2}, ${data.meals[0].strIngredient3}, ${data.meals[0].strIngredient4}, ${data.meals[0].strIngredient5}, ${data.meals[0].strIngredient6}, ${data.meals[0].strIngredient7}, ${data.meals[0].strIngredient8}, ${data.meals[0].strIngredient9}, ${data.meals[0].strIngredient10}, ${data.meals[0].strIngredient11}, ${data.meals[0].strIngredient12}, ${data.meals[0].strIngredient13}</p>
           
+
             </article>
           
           </div>

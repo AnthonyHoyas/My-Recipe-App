@@ -231,8 +231,10 @@ h1 {
   animation: fly 2.1s ease-in-out infinite;
 }
 
-#send-recipe-card {
+#article {
   border: #000 2px solid;
+  border-radius: 30px;
+  box-sizing: border-box;
 }
 
 img {
@@ -280,6 +282,9 @@ img {
   list-style: none;
   margin: 0.5em 0 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .recipe-card article ul li {
   display: inline-block;
@@ -290,7 +295,7 @@ img {
   margin-left: 0;
 }
 .recipe-card article ul li .icon {
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 .recipe-card article ul li span:nth-of-type(2) {
   margin-left: 0.5em;
@@ -356,6 +361,64 @@ img {
   height: 18px;
 }
 
+.input-2 {
+  width: 60%;
+  padding: 2px;
+  margin: 2px;
+  box-sizing: border-box;
+}
+#input-1 {
+  align-items: baseline;
+  justify-content: space-around;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  
+}
+.input-3 {
+  width: 100%;
+  height: 4rem;
+  margin: 2px;
+}  
+#input-4 {
+  width: 100%;
+  height: 4rem;
+  margin: 2px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}  
+
+#send-data {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+#send-data:hover {
+  opacity: 1
+}
+
+footer{
+  height: 100vh;
+  background-color: red;
+}
+.next-cont {
+  height: 40vh;
+  background-color: #57abf2;
+}
+#newbut {
+  display: flex;
+  justify-content: space-around;
+}
 
 
 

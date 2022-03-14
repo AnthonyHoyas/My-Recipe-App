@@ -26,5 +26,9 @@ app.post('/api/addRecipe', (req, res) => {
 
 app.post('/api/recipe', recipe.recipedb)
 
+app.post('/api/delrecipe', (req, res) => {
+  recipe.recipedel(req.body)
+})
+
 
 app.listen(3000, () => console.log("Server Up and running"));

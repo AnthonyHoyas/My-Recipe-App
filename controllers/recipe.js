@@ -1,6 +1,24 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // BACKEND FILE FOR MY DATABASES QUERIES
+
+const recipedel = (data) => {
+
+  let db = new sqlite3.Database('db/db.recipesdatabase');
+  db.run(`DELETE FROM recipes WHERE title="${data.data.title}"`, function(err) {
+      if (err) {
+        return console.log(err);
+      }
+      // get the last insert id
+      console.log(`A row has been deleted with rowid ${this.lastID}`);
+  });
+
+  //console.log(data)
+  db.close();
+
+}
+
+
 const addRecipe = (data) => {
     console.log(data);
     let db = new sqlite3.Database('db/db.recipesdatabase');
@@ -13,6 +31,7 @@ const addRecipe = (data) => {
     })
     db.close();
     }
+
 
     const recipedb = (req, res) => {
         let sendData = {data: []};
@@ -50,3 +69,4 @@ const addRecipe = (data) => {
 
     exports.addRecipe = addRecipe
     exports.recipedb = recipedb
+    exports.recipedel = recipedel
